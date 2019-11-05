@@ -12,7 +12,7 @@ const calculate = (calcData, btnName) => {
       };
     case '+/-':
       if (next) return { total, next: next * -1, operation };
-      return { total: total * -1, next: null, operation: null };
+      return { total: total * -1, next, operation: null };
     case '+':
     case '-':
     case '÷':
@@ -29,6 +29,16 @@ const calculate = (calcData, btnName) => {
     case '=':
       if (operation) return { total: operate(total, next, operation), next: null, operation: null };
       return { total, next: null, operation: null };
+    case '.':
+      if (next) {
+        if (next.includes('')) return {};
+        return { total, next: `${next}.`, operation };
+      }
+      if (total) {
+        if (total.includes('')) return {};
+        return { total: `${total}.`, next, operation };
+      }
+      return { total: '0.', next, operation };
     default:
       break;
   }
