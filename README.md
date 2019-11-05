@@ -10,4 +10,4 @@ This is a small reactjs project that I'm building for the Microver JS course. I 
 
 [Live Link](https://microverse-calculator.herokuapp.com/)
 
-## You can contact me on my email [here](shivamkaushikofficial@gmail.com)
+## You can contact me [here](shivamkaushikofficial@gmail.com)
