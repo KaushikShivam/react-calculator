@@ -2,8 +2,12 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = ({ name, wide }) => {
-  return <button className={`Button ${wide && 'Button-wide'}`}>{name}</button>;
+const Button = ({ name, wide, color }) => {
+  return (
+    <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
+      {name}
+    </button>
+  );
 };
 
 Button.defaultProps = {
