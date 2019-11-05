@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
+import './Display.css';
 
-import './ButtonPanel.css';
-
-const Display = () => {
-  return <div>Display</div>;
-};
+class Display extends Component {
+  static defaultProps = {
+    result: '0',
+  };
+  render() {
+    const { result } = this.props;
+    return (
+      <div>
+        <h2>Result: {result}</h2>
+      </div>
+    );
+  }
+}
 
 export default Display;

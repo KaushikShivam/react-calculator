@@ -6,7 +6,7 @@ import './ButtonPanel.css';
 const ButtonPanel = () => (
   <div>
     <h1>Button Panel</h1>
-    <Button />
+    <Button name='H' />
   </div>
 );
 
