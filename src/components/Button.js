@@ -7,11 +7,17 @@ class Button extends React.Component {
     wide: false,
     color: 'orange',
   };
+
+  handleClick = () => this.props.clickHandler(this.props.name);
+
   render() {
     const { name, wide, color } = this.props;
 
     return (
-      <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
+      <button
+        style={{ backgroundColor: color }}
+        className={`Button ${wide && 'Button-wide'}`}
+        onClick={this.handleClick}>
         {name}
       </button>
     );
