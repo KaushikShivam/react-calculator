@@ -12,7 +12,9 @@ const operate = (numberOne, numberTwo, operation) => {
       if (numTwo === 0) return 0;
       return numOne.div(numTwo);
     case 'X':
-      return numOne.mul(numTwo);
+      return numOne.times(numTwo);
+    case '%':
+      return numOne.mod(numTwo);
     default:
       return 0;
   }
