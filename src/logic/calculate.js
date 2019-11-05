@@ -40,8 +40,8 @@ const calculate = (calcData, btnName) => {
       }
       return { total: '0.', next, operation };
     default:
-      if (operation) return { total, next: next + btnName, operation };
-      return { total: total ? total : total + btnName, next, operation };
+      if (operation) return { total, next: next ? next + btnName : btnName, operation };
+      return { total: total ? total + btnName : btnName, next, operation };
   }
 };
 
