@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Display.css';
 
-class Display extends Component {
-  static defaultProps = {
-    result: '0',
-  };
-  render() {
-    const { result } = this.props;
-    return (
-      <div className='Display'>
-        <h2 className='Display-title'>{result}</h2>
-      </div>
-    );
-  }
-}
+const Display = ({ result }) => {
+  return (
+    <div className='Display'>
+      <h2 className='Display-title'>{result}</h2>
+    </div>
+  );
+};
+
+Display.defaultProps = {
+  result: '0',
+};
 
 export default Display;
