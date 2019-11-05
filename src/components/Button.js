@@ -2,17 +2,20 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = ({ name, wide, color }) => {
-  return (
-    <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
-      {name}
-    </button>
-  );
-};
+class Button extends React.Component {
+  static defaultProps = {
+    wide: false,
+    color: 'orange',
+  };
+  render() {
+    const { name, wide, color } = this.props;
 
-Button.defaultProps = {
-  wide: false,
-  color: 'orange',
-};
+    return (
+      <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
+        {name}
+      </button>
+    );
+  }
+}
 
 export default Button;
