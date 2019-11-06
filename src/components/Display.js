@@ -11,7 +11,7 @@ class Display extends Component {
     const { result } = this.props;
     return (
       <div className='Display'>
-        <h2>Result: {result}</h2>
+        <h2 className='Display-title'>{result}</h2>
       </div>
     );
   }

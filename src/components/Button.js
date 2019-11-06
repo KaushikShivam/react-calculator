@@ -3,8 +3,17 @@ import PropTypes from 'prop-types';
 
 import './Button.css';
 
-const Button = ({ name }) => {
-  return <button className='Button'>{name}</button>;
+const Button = ({ name, wide, color }) => {
+  return (
+    <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
+      {name}
+    </button>
+  );
+};
+
+Button.defaultProps = {
+  wide: false,
+  color: 'orange',
 };
 
 Button.propTypes = {
