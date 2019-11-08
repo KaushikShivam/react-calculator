@@ -9,11 +9,12 @@ const operate = (numberOne, numberTwo, operation) => {
     case '-':
       return numOne.minus(numTwo).toString();
     case '÷':
-      if (numTwo === 0) return 0;
+      if (numTwo.eq(0)) return '0';
       return numOne.div(numTwo).toString();
     case 'X':
       return numOne.times(numTwo).toString();
     case '%':
+      if (numTwo.eq(0)) return '0';
       return numOne.mod(numTwo).toString();
     default:
       return 0;
