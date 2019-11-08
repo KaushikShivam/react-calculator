@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 
 import './Display.css';
 
-class Display extends Component {
-  static defaultProps = {
-    result: '0',
-  };
-  render() {
-    const { result } = this.props;
-    return (
-      <div className='Display'>
-        <h2 className='Display-title'>{result}</h2>
-      </div>
-    );
-  }
-}
+const Display = ({ result }) => {
+  return (
+    <div className='Display'>
+      <h2 className='Display-title'>{result}</h2>
+    </div>
+  );
+};
+
+Display.defaultProps = {
+  result: '0',
+};
 
 Display.propTypes = {
   result: PropTypes.string,

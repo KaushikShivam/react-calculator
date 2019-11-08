@@ -3,18 +3,27 @@ import PropTypes from 'prop-types';
 
 import './Button.css';
 
-const Button = ({ name, wide, color }) => {
-  return (
-    <button style={{ backgroundColor: color }} className={`Button ${wide && 'Button-wide'}`}>
-      {name}
-    </button>
-  );
-};
+class Button extends React.Component {
+  static defaultProps = {
+    wide: false,
+    color: 'orange',
+  };
 
-Button.defaultProps = {
-  wide: false,
-  color: 'orange',
-};
+  handleClick = () => this.props.clickHandler(this.props.name);
+
+  render() {
+    const { name, wide, color } = this.props;
+
+    return (
+      <button
+        style={{ backgroundColor: color }}
+        className={`Button ${wide && 'Button-wide'}`}
+        onClick={this.handleClick}>
+        {name}
+      </button>
+    );
+  }
+}
 
 Button.propTypes = {
   name: PropTypes.string,

@@ -1,7 +1,7 @@
 import operate from './operate';
 
 const calculate = (calcData, btnName) => {
-  const { total, next, operation } = calcData;
+  const { total, next, operation, didCalc } = calcData;
 
   switch (btnName) {
     case 'AC':
@@ -9,10 +9,11 @@ const calculate = (calcData, btnName) => {
         total: null,
         next: null,
         operation: null,
+        didCalc: false,
       };
     case '+/-':
-      if (next) return { total, next: next * -1, operation };
-      return { total: total * -1, next, operation: null };
+      if (next) return { total, next: next * -1, operation, didCalc: false };
+      return { total: total * -1, next, operation: null, didCalc: false };
     case '+':
     case '-':
     case '÷':
@@ -23,25 +24,31 @@ const calculate = (calcData, btnName) => {
           total: operate(total, next, operation),
           next: null,
           operation: btnName,
+          didCalc: false,
         };
       }
-      return { total, next: null, operation: btnName };
+      return { total, next: null, operation: btnName, didCalc: false };
     case '=':
-      if (operation) return { total: operate(total, next, operation), next: null, operation: null };
-      return { total, next: null, operation: null };
+      if (operation)
+        return {
+          total: operate(total, next, operation),
+          next: null,
+          operation: null,
+          didCalc: true,
+        };
+      return { total, next: null, operation: null, didCalc: true };
     case '.':
       if (next) {
-        if (next.includes('')) return {};
-        return { total, next: `${next}.`, operation };
+        return { total, next: `${next}.`, operation, didCalc: false };
       }
       if (total) {
-        if (total.includes('')) return {};
-        return { total: `${total}.`, next, operation };
+        return { total: `${total}.`, next, operation, didCalc: false };
       }
       return { total: '0.', next, operation };
     default:
-      if (operation) return { total, next: next + btnName, operation };
-      return { total: total + btnName, next, operation };
+      if (operation) return { total, next: next ? next + btnName : btnName, operation };
+      if (didCalc) return { total: btnName, next, operation, didCalc: true };
+      return { total: total ? total + btnName : btnName, next, operation };
   }
 };
 
