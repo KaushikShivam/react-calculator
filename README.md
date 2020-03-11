@@ -1,18 +1,21 @@
 # React Calculator
 
-This is a small reactjs project that I'm building for the Microver JS course. I shall be updating the README file as I progress through each milestone
+[React Calculator](https://blissful-brattain-2ea0d8.netlify.com/) This is a small reactjs project that I'm building for the Microver JS course.
+![Screenshot](screenshot.png)
 
-## Milestone 1
+## Table of content
 
-- Create a barebones app using `create-react-app`
-- Delete unwanted files
-- Deploy it to heroku
+- [Description](#Description)
+- [Installation](#installation)
+- [Contact](#contact)
 
-[Live Link](https://microverse-calculator.herokuapp.com/)
+## Description
 
-## Logic
+This is a small reactjs project that I'm building for the Microver JS course.
 
-1. Add Calculate logic for
+### Logic
+
+Add Calculate logic for
 
 - AC
 - +/-
@@ -20,6 +23,33 @@ This is a small reactjs project that I'm building for the Microver JS course. I 
 - = operator
 - numeric digits
 
-2. Add operate logic for all the operations
+## Installation
 
-## You can contact me [here](shivamkaushikofficial@gmail.com)
+1. Clone the project to your local directory
+
+```
+git clone https://github.com/KaushikShivam/restaurant_page
+```
+
+2. The project uses NPM for managing dependencies. Run npm install to install all the required dependencies
+
+```
+npm install
+```
+
+3. Run the task runner to run the app
+
+```
+npm run start
+```
+
+## Contact
+
+You can contact me at:
+
+- [Portfolio](https://www.shivamkaushik.com)
+- [Email](mailto:shivamkaushikofficial@gmail.com)
+- [Linkedin](https://www.linkedin.com/in/kshivamdev/)
+- [Twitter](https://twitter.com/kShivamDev)
+- [Medium](https://medium.com/@shivamkaushikofficial)
+- [Angellist](https://angel.co/kshivamdev)
